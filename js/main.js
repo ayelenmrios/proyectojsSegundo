@@ -2,9 +2,11 @@
 
 let saludoInicial = alert("Bienvenido a BoleteríaROCK, la tienda virtual para comprar entradas a los últimos recitales en Argentina!");
 
-let seleccionar = parseInt(prompt("Entradas disponibles para las siguientes bandas:\n 1) Fito Paez \n 2) Luis Spinetta \n 3) Charly García \n 4) Soda Estereo"));
+let seleccion = parseInt(prompt("Entradas disponibles para las siguientes bandas:\n 0) Fito Paez \n 1) Luis Spinetta \n 2) Charly García \n 3) Soda Estereo"));
 
-//Objetos
+let entrada = parseInt(prompt("Cuantas entradas quiere comprar?"));
+
+
 let fitoPaez = {
     nombre: "Fito Paez",
     fecha: "04-07-1999",
@@ -33,18 +35,45 @@ let sodaEstereo = {
     precio: 5200,
 };
 
-function recitalInfo(){
-    console.log("Los datos del recital son:");
-    
-    if(seleccionar === 1){
-        console.log(fitoPaez);
-    } else if(seleccionar === 2){
-        console.log(luiSpinetta);
-    } else if(seleccionar === 3){
-        console.log(charlyGarcia);
-    } else if(seleccionar === 4){
-        console.log(sodaEstereo);
-    }
-}
-recitalInfo();
 
+
+const artistas = [fitoPaez, luisSpinetta, charlyGarcia, sodaEstereo];
+
+if(seleccion === 0){
+    let valor = fitoPaez["precio"];
+    cuenta();
+} else if(seleccion === 1){
+    let valor = luisSpinetta["precio"];
+    cuenta();
+} else if(seleccion === 2){
+    let valor = charlyGarcia["precio"];
+    cuenta();
+} else if(seleccion === 3){
+    let valor = sodaEstereo["precio"];
+    cuenta();
+}
+
+function cuenta(precio){
+    let resultado = entrada * precio;
+    console.log(resultado);
+}
+
+console.log("DATOS DEL CONCIERTO");
+console.log(artistas[seleccion]);
+console.log("TOTAL A PAGAR:");
+
+let valor = 0;
+
+if(seleccion === 0){
+    let valor = fitoPaez["precio"];
+    cuenta(valor);
+} else if(seleccion === 1){
+    let valor = luisSpinetta["precio"];
+    cuenta(valor);
+} else if(seleccion === 2){
+    let valor = charlyGarcia["precio"];
+    cuenta(valor);
+} else if(seleccion === 3){
+    let valor = sodaEstereo["precio"];
+    cuenta(valor);
+}
