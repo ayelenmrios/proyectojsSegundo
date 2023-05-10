@@ -59,6 +59,12 @@ function cuenta(precio){
 }
 
 console.log("DATOS DEL CONCIERTO");
+
+for (let i = 0; i < artistas.length; i++) {
+  artistas[i].nombre = artistas[i].nombre.toUpperCase();
+  artistas[i].lugar = artistas[i].lugar.toUpperCase();
+}
+
 console.log(artistas[seleccion]);
 console.log("TOTAL A PAGAR:");
 
